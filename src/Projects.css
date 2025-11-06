@@ -1,0 +1,89 @@
+.projects-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background-color: var(--card-bg-color);
+  padding: 25px;
+  border-radius: 8px;
+  overflow: hidden; /* To contain the image */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.project-card .project-tech {
+  font-style: italic;
+  color: var(--text-secondary-color);
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.project-description {
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.project-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.project-link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff; /* White text for better contrast */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link-button:hover {
+  background-color: var(--primary-hover-color);
+  color: #fff;
+}
+
+.project-link-button span {
+  display: inline-block;
+  transition: transform 0.3s ease-out;
+}
+
+.project-link-button i {
+  position: absolute;
+  left: 50%;
+  top: 150%; /* Start below the button */
+  transform: translateX(-50%);
+  transition: top 0.3s ease-out;
+}
+
+.project-link-button:hover span {
+  transform: translateY(-200%); /* Move text up and out */
+}
+
+.project-link-button:hover i {
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the icon */
+}

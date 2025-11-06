@@ -1,0 +1,50 @@
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  background-image: var(--bg-pattern-url);
+  color: var(--text-color);
+  text-align: center;
+  position: fixed; /* Ensure it covers the whole screen */
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Make sure it's on top of everything else */
+}
+
+.welcome-page h1 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+}
+
+.enter-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+
+.enter-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-page h1 {
+    font-size: 2.5rem;
+  }
+  .enter-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}

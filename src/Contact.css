@@ -1,0 +1,124 @@
+.contact-section {
+  text-align: center;
+  background-color: var(--bg-secondary-color);
+  padding: 80px 15%; /* Consistent padding with other sections */
+  padding: 60px 15%;
+  border-bottom: none;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: flex-start; /* Align items to the top */
+  gap: 80px; /* Increased gap for better separation */
+  max-width: 1200px; /* Limit overall width */
+  margin: 0 auto 50px auto; /* Center container and add bottom margin */
+}
+
+.contact-details {
+  flex: 1; /* Allow it to take available space */
+  max-width: 400px; /* Max width for details column */
+  text-align: left;
+  background-color: var(--card-bg-color); /* Card background */
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.contact-details p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: var(--text-color); /* Ensure text color is correct */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1.5; /* Allow form to take more space */
+  max-width: 600px; /* Max width for form column */
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color); /* Subtle border */
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Highlight on focus */
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2); /* Soft glow */
+}
+
+.form-submit-button {
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-submit-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.social-links a {
+  margin: 0 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.footer-bottom {
+  margin-top: 50px; /* Increased margin */
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+  text-align: center; /* Ensure copyright is centered */
+}
+
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center; /* Center items when stacked */
+    gap: 40px;
+  }
+  .contact-details,
+  .contact-form {
+    max-width: 100%; /* Allow full width on smaller screens */
+    width: 100%;
+    text-align: center; /* Center text in details on mobile */
+  }
+  .contact-details p {
+    text-align: center;
+  }
+}

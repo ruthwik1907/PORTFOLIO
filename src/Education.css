@@ -1,0 +1,24 @@
+.education-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.education-item {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.education-item h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+}
+
+.education-item .institution {
+  font-style: italic;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}

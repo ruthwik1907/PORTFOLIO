@@ -1,0 +1,33 @@
+.certifications-section {
+  background-color: var(--bg-secondary-color);
+}
+
+.certifications-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.certification-card {
+  background-color: var(--bg-color);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.certification-card h3 {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.certification-card .cert-issuer {
+  font-style: italic;
+  color: var(--text-secondary-color);
+  margin-bottom: 15px;
+}
