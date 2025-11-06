@@ -69,7 +69,7 @@ const Header = () => {
           <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
             {navLinks}
           </nav>
-          <a href="/RUTHWIK RESUME.pdf" download="RUTHWIK_RESUME.pdf" className="resume-button">Download Resume</a>
+          <a href="/RUTHWIK-RESUME.pdf" download="RUTHWIK-RESUME.pdf" className="resume-button">Download Resume</a>
         </div>
       </div>
     </motion.header>
