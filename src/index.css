@@ -40,10 +40,12 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Show default cursor on interactive elements for better accessibility */
-body a, body button {
-  /* This ensures the browser's default hand icon never appears */
-  cursor: none !important;
+/* Only hide the default cursor on devices that can hover (i.e., non-touch) */
+@media (hover: hover) and (pointer: fine) {
+  body a, body button {
+    /* This ensures the browser's default hand icon never appears */
+    cursor: none !important;
+  }
 }
 
 html {

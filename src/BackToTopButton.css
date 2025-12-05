@@ -67,3 +67,11 @@
     opacity: 0;
   }
 }
+
+/* Disable complex animations on mobile to prevent bugginess */
+@media (max-width: 768px) {
+  .back-to-top-button[data-firing='true'],
+  .back-to-top-button[data-firing='true']::after {
+    animation: none;
+  }
+}

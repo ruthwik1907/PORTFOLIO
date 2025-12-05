@@ -14,3 +14,10 @@
   color: var(--primary-color);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
+
+/* Hide custom cursor on touch devices and smaller screens */
+@media (max-width: 1024px) {
+  .custom-cursor {
+    display: none;
+  }
+}
