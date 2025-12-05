@@ -21,6 +21,38 @@ const Chatbot = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const getBotResponse = (userInput) => {
+    const text = userInput.toLowerCase();
+    if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
+      return "Hello! It's great to connect. How can I help you learn more about Ruthwik's work?";
+    }
+    if (text.includes('skill') || text.includes('tech')) {
+      return "Ruthwik is proficient in several areas! His main skills include: Programming (Python, Java, JavaScript), Web Development (React, Node.js), Data Science (Pandas, Scikit-learn), Databases & Cloud (MySQL, MongoDB, Azure), and various Tools like GitHub and Figma. Is there a specific technology you'd like to know more about?";
+    }
+    if (text.includes('project')) {
+      return "He has worked on several exciting projects! Some key ones include TravelMate (a full-stack travel app for a hackathon), a Smart Governance AI platform, and an IPL Match Winner Prediction model. You can find more details in the 'Projects' section of the portfolio!";
+    }
+    if (text.includes('experience') || text.includes('intern')) {
+      return "Ruthwik gained practical experience as a Web Development Intern at Prodigy InfoTech, where he contributed to live projects and enhanced his skills in both front-end and back-end development.";
+    }
+    if (text.includes('education') || text.includes('college') || text.includes('degree')) {
+      return "He is currently pursuing a Bachelor of Technology in Computer Science at Rajalakshmi Engineering College, with an expected graduation in June 2026. He maintains a CGPA of 7.57.";
+    }
+    if (text.includes('contact') || text.includes('email') || text.includes('phone')) {
+      return "You can get in touch with Ruthwik via email at vcvns.rutu10@gmail.com or by phone at +91 7338841155. All his contact details are at the bottom of the page!";
+    }
+    if (text.includes('resume') || text.includes('cv')) {
+      return "You can download a copy of his resume by clicking the 'Download Resume' button in the header.";
+    }
+    if (text.includes('thank')) {
+      return "You're welcome! Is there anything else I can help you with?";
+    }
+    if (text.includes('bye')) {
+      return "Goodbye! Have a great day.";
+    }
+    return "That's a great question! For more specific details, I'd recommend checking out the relevant section on the portfolio or reaching out to Ruthwik directly via the contact form. Is there anything else I can help with?";
+  };
+
   const handleSendMessage = async (e) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
@@ -30,29 +62,13 @@ const Chatbot = () => {
     setInputValue('');
     setIsLoading(true);
 
-    try {
-      // This endpoint points to our Netlify Function
-      const response = await fetch('/.netlify/functions/ask-gemini', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: inputValue }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get a response from the bot.');
-      }
-
-      const data = await response.json();
-      const botMessage = { sender: 'bot', text: data.reply };
+    // Simulate bot thinking for a more natural feel
+    setTimeout(() => {
+      const botResponseText = getBotResponse(userMessage.text);
+      const botMessage = { sender: 'bot', text: botResponseText };
       setMessages(prev => [...prev, botMessage]);
-
-    } catch (error) {
-      console.error('Chatbot error:', error);
-      const errorMessage = { sender: 'bot', text: "Sorry, I'm having trouble connecting. Please try again later." };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
       setIsLoading(false);
-    }
+    }, 1000); // 1-second delay
   };
 
   return (
