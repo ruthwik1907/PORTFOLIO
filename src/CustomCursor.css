@@ -2,12 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
   pointer-events: none;
-  mix-blend-mode: difference;
-  /* This is the key fix: ensures the cursor is on top of other elements */
   z-index: 9999;
+  /* The transform-origin is set to the "tip" of the cursor icon */
+  transform-origin: 2px 2px;
+}
+
+.custom-cursor svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }

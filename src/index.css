@@ -42,7 +42,8 @@ body {
 
 /* Show default cursor on interactive elements for better accessibility */
 body a, body button {
-  cursor: none;
+  /* This ensures the browser's default hand icon never appears */
+  cursor: none !important;
 }
 
 html {
