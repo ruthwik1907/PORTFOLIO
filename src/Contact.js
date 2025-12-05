@@ -18,21 +18,25 @@ const Contact = () => {
         */}
          <form 
           className="contact-form" 
-          name="contact" // Add a name attribute for Netlify
-          data-netlify="true" // This tells Netlify to process the form
+          name="contact"
+          method="POST"
+          data-netlify="true"
           action="/thank-you" // Redirect to this page on success
         >
           <input type="hidden" name="form-name" value="contact" /> {/* Hidden field for Netlify */}
-          <label htmlFor="name" className="visually-hidden">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-
-          <label htmlFor="email" className="visually-hidden">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required />
-
-          <label htmlFor="message" className="visually-hidden">Your Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
-          <button type="submit" className="form-submit-button">Send Message</button>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" className="form-submit-button">Send</button>
         </form>
       </div>
       <div className="social-links">

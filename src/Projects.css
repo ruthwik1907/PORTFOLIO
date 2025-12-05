@@ -30,6 +30,12 @@
   margin-top: 0;
 }
 
+.project-problem {
+  font-size: 0.95rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 15px;
+}
+
 .project-card .project-tech {
   font-style: italic;
   color: var(--text-secondary-color);

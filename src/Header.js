@@ -59,7 +59,9 @@ const Header = () => {
     >
       <div className="nav-container">
         <div className="nav-brand">
-          <a href="#header">SAI RUTHWIK V.C.V.N</a>
+          <a href="#header">
+            SAI RUTHWIK V | Portfolio <span style={{ color: 'var(--primary-color)' }}>•</span>
+          </a>
         </div>
         <button
           className={`hamburger-menu ${menuOpen ? 'open' : ''}`}
