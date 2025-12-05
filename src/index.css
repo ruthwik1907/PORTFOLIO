@@ -41,12 +41,6 @@ body {
 }
 
 /* Only hide the default cursor on devices that can hover (i.e., non-touch) */
-@media (hover: hover) and (pointer: fine) {
-  body a, body button {
-    /* This ensures the browser's default hand icon never appears */
-    cursor: none !important;
-  }
-}
 
 html {
   height: 100%; /* Ensure html takes full height */
