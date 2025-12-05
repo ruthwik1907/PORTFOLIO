@@ -95,7 +95,7 @@
     display: none; /* Hide nav links on mobile for a cleaner look */
   }
   .nav-brand a {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .resume-button {
     padding: 8px 15px;

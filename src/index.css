@@ -29,7 +29,6 @@
 body {
   height: 100%; /* Ensure body takes full height */
   overflow-x: hidden; /* Prevent horizontal scroll */
-  cursor: none; /* Hide the default system cursor */
   margin: 0;
   font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -38,10 +37,15 @@ body {
   background-image: var(--bg-pattern-url);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: auto; /* Default cursor for mobile */
 }
 
 /* Only hide the default cursor on devices that can hover (i.e., non-touch) */
-
+@media (hover: hover) and (pointer: fine) {
+  body, a, button {
+    cursor: none;
+  }
+}
 html {
   height: 100%; /* Ensure html takes full height */
   scroll-behavior: smooth;

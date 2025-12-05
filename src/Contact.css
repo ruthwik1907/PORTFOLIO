@@ -2,9 +2,8 @@
   text-align: center;
   background-color: var(--bg-secondary-color);
   padding: 80px 15%; /* Consistent padding with other sections */
-  padding: 60px 15%;
-  border-bottom: none;
 }
+  
 
 .contact-section h2 {
   font-size: 2.5rem;
