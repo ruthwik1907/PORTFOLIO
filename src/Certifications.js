@@ -25,28 +25,41 @@ const certificationData = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 const Certifications = () => {
   return (
-    <motion.section
-      id="certifications"
-      className="certifications-section"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section id="certifications" className="certifications-section">
       <h2>Certifications</h2>
-      <div className="certifications-grid">
+      <motion.div className="timeline" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         {certificationData.map((cert, index) => (
-          <div key={index} className="certification-card">
-            <h3>{cert.name}</h3>
-            <p className="cert-issuer">{cert.issuer}</p>
-            <p>{cert.details}</p>
-          </div>
+          <motion.div key={index} className="timeline-item" variants={itemVariants}>
+            <div className="timeline-content">
+              <h3>{cert.name}</h3>
+              <p className="cert-issuer">{cert.issuer}</p>
+              <p>{cert.details}</p>
+            </div>
+          </motion.div>
         ))}
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 
-export default Certifications;
+export default React.memo(Certifications);

@@ -12,7 +12,7 @@
   position: fixed; /* Ensure it covers the whole screen */
   top: 0;
   left: 0;
-  z-index: 9999; /* Make sure it's on top of everything else */
+  z-index: 2000; /* Make sure it's on top of everything else */
 }
 
 .welcome-page h1 {

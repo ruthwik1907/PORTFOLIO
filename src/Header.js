@@ -61,13 +61,19 @@ const Header = () => {
         <div className="nav-brand">
           <a href="#header">SAI RUTHWIK V.C.V.N</a>
         </div>
-        <div className={`hamburger-menu ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          className={`hamburger-menu ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="main-nav"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
         <div className="header-actions">
-          <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
+          <nav id="main-nav" className={`main-nav ${menuOpen ? 'open' : ''}`}>
             {navLinks}
           </nav>
           <a href={resumePDF} download="RUTHWIK-RESUME.pdf" className="resume-button">Download Resume</a>

@@ -1,3 +1,4 @@
+import React from 'react';
 import './Skills.css';
 import { motion } from 'framer-motion';
 
@@ -5,7 +6,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.1
     },
   },
 };
@@ -29,10 +30,8 @@ const Skills = () => {
           <ul>
             <li>Python</li>
             <li>Java</li>
-            <li>Kotlin</li>
-            <li>C</li>
-            <li>SQL</li>
             <li>JavaScript</li>
+            <li>SQL</li>
           </ul>
         </motion.div>
         <motion.div className="skill-category" variants={itemVariants}>
@@ -41,7 +40,6 @@ const Skills = () => {
             <li>React</li>
             <li>Node.js</li>
             <li>REST APIs</li>
-            <li>PHP</li>
           </ul>
         </motion.div>
         <motion.div className="skill-category" variants={itemVariants}>
@@ -50,7 +48,6 @@ const Skills = () => {
             <li>Pandas</li>
             <li>Scikit-learn</li>
             <li>NLP</li>
-            <li>Streamlit</li>
           </ul>
         </motion.div>
         <motion.div className="skill-category" variants={itemVariants}>
@@ -58,14 +55,13 @@ const Skills = () => {
           <ul>
             <li>MySQL</li>
             <li>MongoDB</li>
-            <li>Azure App Services</li>
+            <li>Azure</li>
           </ul>
         </motion.div>
         <motion.div className="skill-category" variants={itemVariants}>
           <h3>Tools</h3>
           <ul>
             <li>GitHub</li>
-            <li>VS Code</li>
             <li>Figma</li>
             <li>UiPath</li>
           </ul>
@@ -75,4 +71,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default React.memo(Skills);

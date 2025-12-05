@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './Contact.css';
 
 const Contact = () => {
@@ -16,16 +16,28 @@ const Contact = () => {
           To make this form work, sign up for a free service like EmailJS (emailjs.com)
           and follow their documentation to connect this form.
         */}
-        <form className="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+         <form 
+          className="contact-form" 
+          name="contact" // Add a name attribute for Netlify
+          data-netlify="true" // This tells Netlify to process the form
+          action="/thank-you" // Redirect to this page on success
+        >
+          <input type="hidden" name="form-name" value="contact" /> {/* Hidden field for Netlify */}
+          <label htmlFor="name" className="visually-hidden">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+          <label htmlFor="email" className="visually-hidden">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+          <label htmlFor="message" className="visually-hidden">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
           <button type="submit" className="form-submit-button">Send Message</button>
         </form>
       </div>
       <div className="social-links">
-        <a href="https://www.linkedin.com/in/sai-ruthwik-v-c-v-n-b9638a256/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/SaiRuthwik" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="https://www.linkedin.com/in/sai-ruthwik-v-42515929a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/ruthwik1907" target="_blank" rel="noopener noreferrer">Github</a>
       </div>
       <div className="footer-bottom">
         <p>&copy; 2024 SAI RUTHWIK V.C.V.N. All Rights Reserved.</p>
@@ -34,4 +46,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

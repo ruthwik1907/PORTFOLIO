@@ -16,7 +16,7 @@ const WelcomePage = ({ onEnter }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
       >
-        Welcome to My Portfolio
+        "  WELCOME "
       </motion.h1>
       <motion.button
         onClick={onEnter}

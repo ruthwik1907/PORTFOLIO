@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Header from './Header';
-import About from './About';
-import Hero from './Hero';
-import Experience from './Experience';
-import Projects from './Projects';
-import Skills from './Skills';
-import Education from './Education';
-import Certifications from './Certifications';
-import Contact from './Contact';
 import WelcomePage from './WelcomePage'; // Import the new WelcomePage
 import CustomCursor from './CustomCursor';
 import ThemeSwitcher from './ThemeSwitcher';
+import BackToTopButton from './BackToTopButton'; // Import the new button
+import LoadingSpinner from './LoadingSpinner'; // Import the new spinner
+import Chatbot from './Chatbot'; // Import the new chatbot
+
+// Lazy load the main page sections for better initial performance
+const Hero = React.lazy(() => import('./Hero'));
+const About = React.lazy(() => import('./About'));
+const Skills = React.lazy(() => import('./Skills'));
+const Experience = React.lazy(() => import('./Experience'));
+const Projects = React.lazy(() => import('./Projects'));
+const Education = React.lazy(() => import('./Education'));
+const Certifications = React.lazy(() => import('./Certifications'));
+const Contact = React.lazy(() => import('./Contact'));
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   const [showWelcome, setShowWelcome] = useState(true); // State to control welcome page visibility
 
   const toggleTheme = () => {
@@ -39,16 +44,20 @@ function App() {
         <>
           <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
           <Header />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Education />
-            <Certifications />
-            <Contact />
-          </main>
+          <BackToTopButton />
+          <Chatbot />
+          <Suspense fallback={<LoadingSpinner />}>
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Experience />
+              <Projects />
+              <Education />
+              <Certifications />
+              <Contact />
+            </main>
+          </Suspense>
         </>
       )}
     </div>

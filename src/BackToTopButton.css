@@ -1,10 +1,10 @@
-.theme-switcher {
+.back-to-top-button {
   position: fixed;
-  bottom: 90px; /* Moved up to sit above the chatbot button */
-  left: 20px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
   background-color: var(--card-bg-color);
-  color: var(--text-color);
+  color: var(--primary-color);
   border: 1px solid var(--border-color);
   border-radius: 50%;
   width: 50px;
@@ -14,9 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.theme-switcher:hover {
+.back-to-top-button:hover {
   transform: scale(1.1);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border-color: var(--primary-color);
 }

@@ -1,31 +1,35 @@
-.skills-section h2 {
+.skills-section {
   text-align: center;
+}
+
+.skills-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Distribute space evenly */
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .skill-category {
-  background-color: var(--card-bg-color);
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1; /* Allow items to grow */
-  min-width: 220px; /* Set a minimum width before wrapping */
-  max-width: 280px; /* Prevent items from becoming too wide */
-  text-align: center;
+  background-color: var(--bg-secondary-color);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-align: left;
 }
 
 .skill-category h3 {
+  font-size: 1.5rem;
   color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 10px;
-  margin-bottom: 15px;
 }
 
 .skill-category ul {
@@ -37,4 +41,5 @@
 .skill-category li {
   margin-bottom: 10px;
   font-size: 1.1rem;
+  color: var(--text-color);
 }

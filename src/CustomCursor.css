@@ -1,18 +1,13 @@
 .custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
   pointer-events: none;
-  z-index: 9999;
   mix-blend-mode: difference;
-}
-
-@media (max-width: 768px) {
-  .custom-cursor {
-    display: none; /* Hide custom cursor on mobile */
-  }
+  /* This is the key fix: ensures the cursor is on top of other elements */
+  z-index: 9999;
 }
