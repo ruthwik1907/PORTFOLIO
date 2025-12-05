@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { motion } from 'framer-motion';
 
+import resumePDF from './assets/RUTHWIK-RESUME.pdf'; // Assuming your resume is in src/assets
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,7 +70,7 @@ const Header = () => {
           <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
             {navLinks}
           </nav>
-          <a href="/RUTHWIK-RESUME.pdf" download="RUTHWIK-RESUME.pdf" className="resume-button">Download Resume</a>
+          <a href={resumePDF} download="RUTHWIK-RESUME.pdf" className="resume-button">Download Resume</a>
         </div>
       </div>
     </motion.header>
